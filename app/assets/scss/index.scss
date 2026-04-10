@@ -1,0 +1,17 @@
+@use 'reset-css';
+@use './variables' as *;
+@use './fonts' as *;
+
+body {
+	min-width: $min-site-width;
+	padding: 0;
+	margin: 0;
+	font-family: $font-family-sans;
+	font-weight: $font-weight-normal;
+	line-height: $line-height-normal;
+	color: $color-black;
+	background-color: $color-white;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
