@@ -1,0 +1,65 @@
+@use '../../variables' as *;
+
+.app-button {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+	padding: 1rem 2rem;
+  text-decoration: none;
+  cursor: pointer;
+	border-radius: 0;
+  transition: all 0.2s ease;
+
+  &--dark {
+    color:$color-white;
+    background-color: $color-black;
+		border: none;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+
+  &--light {
+    color: $color-black;
+    background-color: $color-white;
+		border: 2px solid #0000001A;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  &--small {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  &--rounded {
+    border-radius: 9999px;
+  }
+
+  &--link {
+    padding: 0;
+    color: inherit;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    display: inline-block;
+  }
+}
