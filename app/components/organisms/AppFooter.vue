@@ -63,7 +63,7 @@ interface Props {
   theme?: FooterTheme
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   theme: 'primary'
 })
 </script>

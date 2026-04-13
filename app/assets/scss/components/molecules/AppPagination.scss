@@ -1,1 +1,50 @@
-/* AppPagination Component Styles */
+@use '../../variables' as *;
+
+.app-pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  &__button {
+    height: 2.75rem;
+    aspect-ratio: 1/1;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: $color-white;
+    border: 1px solid $color-light-gray;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &:hover:not(:disabled) {
+      color: $color-white;
+      background-color: $color-black;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__page {
+    height: 2.75rem;
+    aspect-ratio: 1/1;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: none;
+    background-color: $color-light-gray;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+
+    &--active {
+      color: $color-white;
+      background-color: $color-black;
+    }
+  }
+}

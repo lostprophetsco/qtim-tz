@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 	padding: 1rem 2rem;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
@@ -26,7 +26,7 @@
   &--light {
     color: $color-black;
     background-color: $color-white;
-		border: 2px solid #0000001A;
+		border: 0.125rem solid #0000001A;
 
     &:hover {
       background-color: #e0e0e0;
@@ -39,7 +39,7 @@
   }
 
   &--rounded {
-    border-radius: 9999px;
+    border-radius: 624.9375rem;
   }
 
   &--link {

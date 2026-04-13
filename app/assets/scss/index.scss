@@ -3,6 +3,8 @@
 @use './components/atoms';
 @use './components/molecules';
 @use './components/organisms';
+@use './pages/index';
+@use './pages/posts/post-detail';
 
 body {
 	min-width: $min-site-width;

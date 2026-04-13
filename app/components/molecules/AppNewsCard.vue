@@ -1,14 +1,23 @@
 <template>
   <article class="app-news-card">
     <div class="app-news-card__image-wrapper">
-      <img :src="post.image" :alt="post.title" class="app-news-card__image" />
+      <img
+        :src="post.image"
+        :alt="post.title"
+        class="app-news-card__image"
+        loading="lazy"
+      />
     </div>
     <div class="app-news-card__content">
-      <p class="app-news-card__description">{{ post.preview }}</p>
-      <AppButton :to="`/posts/${post.id}`" class="app-news-card__link"
-        >Read more</AppButton
-      >
+      {{ post.preview }}
     </div>
+    <AppButton
+      v-if="post.id"
+      :to="`/posts/${post.id}`"
+      class="app-news-card__link"
+    >
+      Read more
+    </AppButton>
   </article>
 </template>
 
@@ -28,5 +37,5 @@ interface Props {
   post: Post
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>

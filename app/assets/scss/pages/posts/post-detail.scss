@@ -1,0 +1,19 @@
+@use '../../variables' as *;
+
+.post-page {
+  padding: 7.5rem 0 5rem;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+    object-fit: cover;
+  }
+
+  &__description {
+    margin-top: 2rem;
+    font-size: 2.25rem;
+    line-height: 1.24;
+  }
+}

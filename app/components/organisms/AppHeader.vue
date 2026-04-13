@@ -27,7 +27,7 @@ interface Props {
   logoVariant?: LogoVariant
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   logoVariant: 'default'
 })
 </script>

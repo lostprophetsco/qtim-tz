@@ -8,7 +8,7 @@
 
   &__container {
     display: flex;
-		gap: 90px;
+		gap: 5.625rem;
     align-items: center;
     justify-content: space-between;
     padding-block: 2rem;
@@ -21,7 +21,7 @@
   &__nav {
     display: flex;
 		flex-grow: 1;
-    gap: 58px;
+    gap: 3.625rem;
     align-items: center;
 		justify-content: flex-end;
   }
@@ -52,7 +52,7 @@
     height: 2.5rem;
     cursor: pointer;
     background-color: $color-white;
-    border: 1px solid rgb(0 0 0 / 10%);
+    border: 0.0625rem solid rgb(0 0 0 / 10%);
     border-radius: 50%;
     transition: all 0.2s ease;
 

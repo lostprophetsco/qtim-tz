@@ -64,19 +64,44 @@
       </section>
 
       <section class="demo-section">
-        <h2>Other Components</h2>
-        <AppPagination />
-        <AppNewsCard />
+        <h2>AppPagination</h2>
+        <AppPagination
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @prev="currentPage--"
+          @next="currentPage++"
+          @set-page="currentPage = $event"
+        />
+      </section>
+
+      <section class="demo-section">
+        <h2>AppNewsCard</h2>
+        <div class="button-row">
+          <AppNewsCard :post="samplePost" />
+        </div>
       </section>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { AppButton, AppLogo } from '~/components/atoms'
 import { AppPagination, AppNewsCard } from '~/components/molecules'
 import AppHeader from '~/components/organisms/AppHeader.vue'
 import langSwitcher from '~/assets/images/lang-switcher.svg'
+
+const currentPage = ref(1)
+const totalPages = ref(10)
+
+const samplePost = {
+  id: '2',
+  createdAt: '2021-04-23T07:13:49.861Z',
+  title: 'Fantastic Concrete Mouse',
+  preview: 'If we generate the application, we can get to the AGP capacitor through the optical GB sensor!',
+  image: 'https://lorempixel.com/640/480/nature',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+}
 </script>
 
 <style lang="scss">

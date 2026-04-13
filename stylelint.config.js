@@ -9,7 +9,8 @@ export default {
     'no-empty-source': null,
     'selector-class-pattern': null,
     'property-no-vendor-prefix': null,
-    'value-no-vendor-prefix': null
+    'value-no-vendor-prefix': null,
+    'declaration-property-value-no-unknown': null
   },
   overrides: [
     {

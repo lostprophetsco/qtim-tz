@@ -4,11 +4,11 @@ import AppFooter from '~/components/organisms/AppFooter.vue'
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader logoVariant="article" />
 
   <main class="container">
     <slot />
   </main>
 
-  <AppFooter />
+  <AppFooter theme="secondary" />
 </template>
