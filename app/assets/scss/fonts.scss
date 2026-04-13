@@ -3,14 +3,21 @@
   font-family: TTCommons;
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/TTCommons-Regular.woff2') format('woff2'),
-       url('../fonts/TTCommons-Regular.woff') format('woff'),
-       url('../fonts/TTCommons-Regular.ttf') format('truetype');
+  src:
+    url('../fonts/TTCommons-Regular.woff2') format('woff2'),
+    url('../fonts/TTCommons-Regular.woff') format('woff'),
+    url('../fonts/TTCommons-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
 /* Font Families */
-$font-family-sans: ttcommons, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+$font-family-sans:
+  ttcommons,
+  -apple-system,
+  blinkmacsystemfont,
+  'Segoe UI',
+  roboto,
+  sans-serif;
 
 /* Font Weights */
 $font-weight-normal: 400;

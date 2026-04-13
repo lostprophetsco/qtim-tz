@@ -4,7 +4,7 @@
   position: relative;
   padding: 8.75rem 0 1.875rem;
   overflow: hidden;
-	color: $color-black;
+  color: $color-black;
 
   &--primary {
     background-color: $color-primary;
@@ -38,22 +38,22 @@
   &__title {
     margin-top: 3.5rem;
     font-size: 7rem;
-		font-weight: 400;
-		line-height: 1;
-		text-decoration: underline;
-		text-decoration-thickness: 0.125rem;
-    text-underline-offset: .8rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.8rem;
   }
 
   &__right {
     display: flex;
     flex-grow: 1;
-		flex-flow: column;
+    flex-flow: column;
     gap: 2.25rem;
   }
 
   &__contact-section {
-		line-height: 1.2;
+    line-height: 1.2;
 
     p {
       margin: 0;
@@ -98,4 +98,3 @@
     transition: transform 0.2s ease;
   }
 }
-

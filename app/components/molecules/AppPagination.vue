@@ -1,9 +1,16 @@
 <template>
-  <div class="app-pagination">
+  <div
+    class="app-pagination"
+    role="navigation"
+    aria-label="Pagination"
+    tabindex="0"
+    @keydown="handleKeydown"
+  >
     <button
       v-if="currentPage !== 1"
       class="app-pagination__button"
       @click="prevPage"
+      aria-label="Previous page"
     >
       &lt;
     </button>
@@ -15,6 +22,8 @@
         class="app-pagination__page"
         :class="{ 'app-pagination__page--active': page === currentPage }"
         @click="setPage(page)"
+        :aria-label="`Page ${page}`"
+        :aria-current="page === currentPage ? 'page' : undefined"
       >
         {{ page }}
       </button>
@@ -25,6 +34,7 @@
       class="app-pagination__button"
       :disabled="currentPage === totalPages"
       @click="nextPage"
+      aria-label="Next page"
     >
       &gt;
     </button>
@@ -57,6 +67,34 @@ const nextPage = () => {
 
 const setPage = (page: number) => {
   emit('setPage', page)
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  switch (event.key) {
+    case 'ArrowLeft':
+      if (props.currentPage > 1) {
+        prevPage()
+      }
+      break
+    case 'ArrowRight':
+      if (props.currentPage < props.totalPages) {
+        nextPage()
+      }
+      break
+    case 'Home':
+      if (props.currentPage !== 1) {
+        setPage(1)
+      }
+      break
+    case 'End':
+      if (props.currentPage !== props.totalPages) {
+        setPage(props.totalPages)
+      }
+      break
+    default:
+      return
+  }
+  event.preventDefault()
 }
 
 const visiblePages = computed(() => {

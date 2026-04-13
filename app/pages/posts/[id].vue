@@ -21,6 +21,7 @@ import { useRoute } from 'vue-router'
 import { AppLoader } from '~/components/atoms'
 import { usePostsStore } from '~/stores/posts'
 import type { Post } from '~/stores/posts'
+import { useHead } from '#app'
 
 definePageMeta({
   layout: 'article'
@@ -33,5 +34,35 @@ const post = ref<Post | null>(null)
 onMounted(async () => {
   const postId = route.params.id as string
   post.value = await postsStore.fetchPostById(postId)
+})
+
+useHead(() => {
+  if (!post.value) return {}
+
+  return {
+    title: post.value.title,
+    meta: [
+      {
+        name: 'description',
+        content: post.value.description
+      },
+      {
+        property: 'og:title',
+        content: post.value.title
+      },
+      {
+        property: 'og:description',
+        content: post.value.description
+      },
+      {
+        property: 'og:image',
+        content: post.value.image
+      },
+      {
+        property: 'og:type',
+        content: 'article'
+      }
+    ]
+  }
 })
 </script>

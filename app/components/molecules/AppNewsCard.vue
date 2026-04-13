@@ -1,5 +1,5 @@
 <template>
-  <article class="app-news-card">
+  <article class="app-news-card" :aria-label="`Article: ${post.title}`">
     <div class="app-news-card__image-wrapper">
       <img
         :src="post.image"
@@ -15,6 +15,7 @@
       v-if="post.id"
       :to="`/posts/${post.id}`"
       class="app-news-card__link"
+      aria-label="Read full article"
     >
       Read more
     </AppButton>

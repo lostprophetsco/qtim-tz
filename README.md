@@ -1,75 +1,115 @@
-# Nuxt Minimal Starter
+# QTIM News Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Современное приложение новостей/блога, построенное на Nuxt 4, Vue 3 и Pinia для управления состоянием.
 
-## Setup
+## Возможности
 
-Make sure to install dependencies:
+- **Главная страница**: Отображение статей в адаптивной сетке с пагинацией (8 элементов на странице)
+- **Страницы статей**: Индивидуальные страницы статей с подробным контентом и SEO мета-тегами
+- **Пагинация**: Кастомный компонент пагинации с клавиатурной навигацией (стрелки, Home, End)
+- **Управление состоянием**: Pinia store для управления данными статей, состояниями загрузки и пагинацией
+- **Обработка ошибок**: Глобальная обработка ошибок для лучшего управления ошибками
+- **Доступность**: ARIA-метки и роли для поддержки скринридеров
+- **SEO**: Open Graph мета-теги для шаринга в социальных сетях на страницах статей
+- **Компоненты**: Переиспользуемые атомарные и молекулярные компоненты (AppButton, AppLoader, AppLogo, AppHeader, AppFooter, AppNewsCard, AppPagination)
+- **Лейауты**: Лейауты по умолчанию и для статей с разными вариантами хедера и футера
+- **Состояния загрузки**: Кастомный компонент загрузки с ARIA live regions для лучшего UX
+- **TypeScript**: Полная поддержка TypeScript со строгой типизацией
+- **Качество кода**: ESLint, Stylelint, Prettier для консистентного форматирования
+
+## Технологический стек
+
+- **Фреймворк**: Nuxt 4
+- **UI библиотека**: Vue 3 с Composition API
+- **Управление состоянием**: Pinia
+- **Стили**: SCSS с модульной архитектурой
+- **Линтеры**: ESLint, Stylelint, TypeScript компилятор
+- **Форматирование**: Prettier
+- **Доступность**: ARIA-метки, клавиатурная навигация
+
+## Структура проекта
+
+```
+app/
+├── assets/
+│   ├── scss/
+│   │   ├── components/
+│   │   │   ├── atoms/         # Атомарные компоненты (Button, Loader, Logo)
+│   │   │   ├── molecules/     # Молекулярные компоненты (NewsCard, Pagination)
+│   │   │   └── organisms/     # Организмные компоненты (Header, Footer)
+│   │   ├── pages/             # Стили для страниц
+│   │   └── index.scss        # Точка входа SCSS
+│   └── images/               # Изображения
+├── components/
+│   ├── atoms/                # Атомарные компоненты
+│   ├── molecules/            # Молекулярные компоненты
+│   └── organisms/            # Организмные компоненты
+├── layouts/
+│   ├── default.vue           # Лейаут по умолчанию
+│   └── article.vue           # Лейаут для статей
+├── pages/
+│   ├── index.vue             # Главная страница
+│   ├── posts/[id].vue        # Динамические страницы статей
+│   └── ui.vue                # Демо UI компонентов
+└── stores/
+    └── posts.ts              # Pinia store для постов
+```
+
+## Установка
+
+Установите зависимости:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Сервер разработки
 
-Start the development server on `http://localhost:3000`:
+Запустите сервер разработки на `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Качество кода
 
-Build the application for production:
+Запустите линтеры и форматтер для проверки качества кода:
 
 ```bash
-# npm
+# ESLint
+npm run lint
+
+# Stylelint
+npm run stylelint
+
+# Проверка TypeScript
+npx vue-tsc --noEmit
+
+# Форматирование кода с Prettier
+npm run format
+
+# Проверка форматирования
+npm run format:check
+```
+
+## Продакшн
+
+Соберите приложение для продакшена:
+
+```bash
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Локально предпросмотр продакшен-сборки:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## API
+
+Приложение получает статьи из:
+
+```
+https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/
+```

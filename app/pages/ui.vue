@@ -98,9 +98,11 @@ const samplePost = {
   id: '2',
   createdAt: '2021-04-23T07:13:49.861Z',
   title: 'Fantastic Concrete Mouse',
-  preview: 'If we generate the application, we can get to the AGP capacitor through the optical GB sensor!',
+  preview:
+    'If we generate the application, we can get to the AGP capacitor through the optical GB sensor!',
   image: 'https://lorempixel.com/640/480/nature',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 }
 </script>
 
