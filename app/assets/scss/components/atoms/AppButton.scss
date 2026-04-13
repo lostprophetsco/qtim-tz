@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: center;
 	padding: 1rem 2rem;
+  font-size: 20px;
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
 	border-radius: 0;
@@ -33,7 +35,7 @@
 
   &--small {
     padding: 0.75rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 
   &--rounded {
@@ -43,7 +45,7 @@
   &--link {
     padding: 0;
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
     border: none;
 
@@ -53,13 +55,7 @@
     }
   }
 
-  &__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__content {
-    display: inline-block;
+  img, svg {
+    display: block;
   }
 }

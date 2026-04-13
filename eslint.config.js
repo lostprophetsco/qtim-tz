@@ -25,6 +25,7 @@ export default [
         ...globals.node,
         ...globals.es2022,
         defineNuxtConfig: 'readonly',
+        definePageMeta: 'readonly',
         IntersectionObserverInit: 'readonly',
         HTMLElementEventMap: 'readonly'
       }

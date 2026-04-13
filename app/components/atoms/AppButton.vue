@@ -1,18 +1,15 @@
 <template>
-  <component
-    :is="tag"
-    :to="to"
-    :href="href"
-    class="app-button"
-    :class="buttonClasses"
-  >
-    <span v-if="$slots.icon" class="app-button__icon">
-      <slot name="icon" />
-    </span>
-    <span class="app-button__content">
-      <slot />
-    </span>
-  </component>
+  <NuxtLink v-if="to" :to="to" class="app-button" :class="buttonClasses">
+    <slot />
+  </NuxtLink>
+
+  <a v-else-if="href" :href="href" class="app-button" :class="buttonClasses">
+    <slot />
+  </a>
+
+  <button v-else class="app-button" :class="buttonClasses">
+    <slot />
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -35,12 +32,6 @@ const props = withDefaults(defineProps<Props>(), {
   rounded: true,
   to: null,
   href: null
-})
-
-const tag = computed(() => {
-  if (props.to) return 'NuxtLink'
-  if (props.href) return 'a'
-  return 'button'
 })
 
 const buttonClasses = computed(() => [

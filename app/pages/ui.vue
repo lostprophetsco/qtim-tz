@@ -19,7 +19,7 @@
 
           <h3>Modifiers</h3>
           <div class="button-row">
-            <AppButton :rounded="false">Default</AppButton>
+            <AppButton :rounded="false">Not Rounded</AppButton>
             <AppButton rounded>Rounded</AppButton>
           </div>
 
@@ -29,34 +29,38 @@
             <AppButton href="https://example.com">External Link</AppButton>
           </div>
 
-          <h3>With Icon</h3>
-          <div class="button-row">
-            <AppButton>
-              <template #icon>
-                <span>→</span>
-              </template>
-              With Icon
-            </AppButton>
-            <AppButton theme="light" rounded>
-              <template #icon>
-                <span>★</span>
-              </template>
-              Star Button
-            </AppButton>
-          </div>
-
           <h3>Combinations</h3>
           <div class="button-row">
             <AppButton size="small" rounded>Small Rounded</AppButton>
             <AppButton theme="light" size="small">Light Small</AppButton>
-            <AppButton rounded>
-              <template #icon>
-                <span>🔗</span>
-              </template>
-              Rounded with Icon
+            <AppButton :rounded="false">Not Rounded</AppButton>
+            <AppButton theme="light" size="small">
+              <img :src="langSwitcher" alt="Language switcher" />
+              <span>EN</span>
             </AppButton>
           </div>
         </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>AppLogo</h2>
+        <div class="button-group">
+          <h3>Variants</h3>
+          <div class="button-row">
+            <AppLogo variant="default" />
+            <AppLogo variant="article" />
+          </div>
+
+          <h3>With Link</h3>
+          <div class="button-row">
+            <AppLogo to="/" />
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>AppHeader</h2>
+        <AppHeader />
       </section>
 
       <section class="demo-section">
@@ -69,8 +73,10 @@
 </template>
 
 <script setup lang="ts">
-import { AppButton } from '~/components/atoms'
+import { AppButton, AppLogo } from '~/components/atoms'
 import { AppPagination, AppNewsCard } from '~/components/molecules'
+import AppHeader from '~/components/organisms/AppHeader.vue'
+import langSwitcher from '~/assets/images/lang-switcher.svg'
 </script>
 
 <style lang="scss">
@@ -93,7 +99,7 @@ import { AppPagination, AppNewsCard } from '~/components/molecules'
     gap: 1.5rem;
 
     h3 {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
     }

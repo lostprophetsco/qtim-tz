@@ -1,6 +1,7 @@
 @use './variables' as *;
 @use './fonts' as *;
 @use './components/atoms';
+@use './components/organisms';
 
 body {
 	min-width: $min-site-width;
@@ -18,7 +19,7 @@ body {
 }
 
 .container {
-  width: $container-width;
-  padding: 0 1rem;
+  max-width: $container-width;
+  padding-inline: 1rem;
   margin: 0 auto;
 }
