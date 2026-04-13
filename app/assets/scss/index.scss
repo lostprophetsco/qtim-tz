@@ -1,6 +1,7 @@
 @use './variables' as *;
 @use './fonts' as *;
 @use './components/atoms';
+@use './components/molecules';
 @use './components/organisms';
 
 body {

@@ -1,1 +1,49 @@
-/* AddNewsCard Component Styles */
+@use '../../variables' as *;
+
+.app-news-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: $color-white;
+  border-radius: 1rem;
+  transition: transform 0.2s ease;
+
+
+
+  &__image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__content {
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  &__description {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  &__link {
+    color: $color-primary;
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+
+  &:hover {
+    transform: translateY(-0.25rem);
+
+    &__link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
